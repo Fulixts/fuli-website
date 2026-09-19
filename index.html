@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Gabriel Fuli Valcarce · Full-Stack Software Engineer</title>
+  <meta name="description" content="Full-stack software engineer based in São Paulo. APIs, Node.js, .NET, n8n automation, AI integrations, RAG and agentic development with Claude Code." />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:title" content="Gabriel Fuli Valcarce · Full-Stack Software Engineer" />
+  <meta property="og:description" content="APIs, automations and AI integrations that keep production operations running." />
+  <meta property="og:type" content="profile" />
+  <link rel="icon" href="assets/logo.svg?v=2" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="styles.css?v=19" />
+</head>
+<body>
+  <a class="skip" href="#sobre" data-i18n="skip">Skip to content</a>
+
+  <div class="bg" aria-hidden="true">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div class="bg-shade"></div>
+    <canvas class="matrix"></canvas>
+  </div>
+
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Gabriel Fuli Valcarce, home">
+      <img src="assets/logo.svg?v=2" alt="" width="52" height="52" />
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link is-active" href="#inicio" data-nav="inicio" data-i18n="nav.home">Home</a>
+      <a class="nav-link" href="#sobre" data-nav="sobre" data-i18n="nav.about">About</a>
+      <a class="nav-link" href="#trajetoria" data-nav="trajetoria" data-i18n="nav.career">Career</a>
+      <a class="nav-link" href="#contato" data-nav="contato" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <a class="lang icon-link pill-linkedin" href="https://www.linkedin.com/in/gabriel-fuli-valcarce-b8100115b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+    <a class="lang icon-link" href="https://github.com/Fulixts" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+    <button class="lang" type="button" data-lang-toggle aria-label="Mudar para português">PT</button>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="overlay" hidden></div>
+  <div class="menu" id="mobile-menu" hidden>
+    <nav aria-label="Menu">
+      <a class="menu-link is-active" href="#inicio" data-nav="inicio" data-i18n="nav.home">Home</a>
+      <a class="menu-link" href="#sobre" data-nav="sobre" data-i18n="nav.about">About</a>
+      <a class="menu-link" href="#trajetoria" data-nav="trajetoria" data-i18n="nav.career">Career</a>
+      <a class="menu-link" href="#contato" data-nav="contato" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="menu-actions">
+      <a class="pill-dark" href="https://www.linkedin.com/in/gabriel-fuli-valcarce-b8100115b/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
+      <a class="pill-dark" href="https://github.com/Fulixts" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
+      <button class="pill-dark" type="button" data-lang-toggle aria-label="Mudar para português">PT</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="page" id="inicio" data-section="inicio">
+      <div class="hero">
+        <div class="trust anim" style="--d: 0.05s">
+          <span class="avatar a1"><span><i class="fa-brands fa-node-js" aria-hidden="true"></i></span></span>
+          <span class="avatar a2"><span><i class="fa-brands fa-microsoft" aria-hidden="true"></i></span></span>
+          <span class="avatar a3"><span><i class="fa-brands fa-docker" aria-hidden="true"></i></span></span>
+          <span class="trust-pill" data-i18n="hero.trust">Software Engineer at RDI Software</span>
+        </div>
+
+        <h1 class="headline">
+          <span class="sr-only">Gabriel Fuli Valcarce. </span>
+          <span class="line l1 split" data-i18n="hero.h1a">Engineering</span>
+          <span class="line l2 split" data-i18n="hero.h1b">Built To Evolve</span>
+        </h1>
+
+        <p class="subhead anim" style="--d: 0.28s" data-i18n="hero.sub">I'm Gabriel Fuli, a full-stack software engineer. I build APIs, automations and AI integrations that keep real production operations running.</p>
+
+        <span class="magnet anim-pulse" style="--d: 0.4s"><a class="cta" href="#sobre" data-i18n="hero.cta">Explore my journey</a></span>
+      </div>
+
+      <dl class="stats">
+        <div class="stat anim" style="--d: 0.5s">
+          <span class="stat-icon" aria-hidden="true">&lt;</span>
+          <dd class="stat-value" data-target="7" data-suffix="+" data-decimals="0">7+</dd>
+          <dt class="stat-label" data-i18n="stat.years">Years in tech</dt>
+        </div>
+        <div class="stat anim" style="--d: 0.58s">
+          <span class="stat-icon" aria-hidden="true">%</span>
+          <dd class="stat-value" data-target="4" data-suffix="+" data-decimals="0">4+</dd>
+          <dt class="stat-label" data-i18n="stat.markets">Global markets served</dt>
+        </div>
+        <div class="stat anim" style="--d: 0.66s">
+          <span class="stat-icon" aria-hidden="true">*</span>
+          <dd class="stat-value" data-target="24" data-suffix="/7" data-decimals="0">24/7</dd>
+          <dt class="stat-label" data-i18n="stat.prod">Production-critical systems</dt>
+        </div>
+        <div class="stat anim" style="--d: 0.74s">
+          <span class="stat-icon" aria-hidden="true">#</span>
+          <dd class="stat-value" data-target="3" data-suffix="" data-decimals="0">3</dd>
+          <dt class="stat-label" data-i18n="stat.langs">Languages</dt>
+        </div>
+      </dl>
+    </section>
+
+    <div class="content">
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span class="marquee-group"><span>Node.js</span><span class="marquee-sep">*</span><span>.NET</span><span class="marquee-sep">*</span><span>REST APIs</span><span class="marquee-sep">*</span><span>n8n</span><span class="marquee-sep">*</span><span>RAG</span><span class="marquee-sep">*</span><span>Claude Code</span><span class="marquee-sep">*</span><span>MCP</span><span class="marquee-sep">*</span><span>Docker</span><span class="marquee-sep">*</span><span>PostgreSQL</span><span class="marquee-sep">*</span><span>AWS</span><span class="marquee-sep">*</span></span><span class="marquee-group"><span>Node.js</span><span class="marquee-sep">*</span><span>.NET</span><span class="marquee-sep">*</span><span>REST APIs</span><span class="marquee-sep">*</span><span>n8n</span><span class="marquee-sep">*</span><span>RAG</span><span class="marquee-sep">*</span><span>Claude Code</span><span class="marquee-sep">*</span><span>MCP</span><span class="marquee-sep">*</span><span>Docker</span><span class="marquee-sep">*</span><span>PostgreSQL</span><span class="marquee-sep">*</span><span>AWS</span><span class="marquee-sep">*</span></span></div></div>
+
+      <section class="block" id="sobre" data-section="sobre">
+        <h2 class="block-title" data-i18n="about.title">About</h2>
+        <div class="block-body prose">
+          <p class="lead" data-i18n="about.p1">I'm a computer engineer and have been building software since 2019. Today, at RDI Software, I ship new features and investigate critical incidents in McDonald's applications used in markets such as Germany, Australia, Canada and the United States.</p>
+          <p data-i18n="about.p2">I enjoy the work that demands calm: correlating logs across systems, reproducing the issue in a controlled environment, reaching the root cause and delivering a fix that breaks nothing in another country. I talk little and investigate a lot.</p>
+          <p data-i18n="about.p3">On the back end, Node.js is my tool of choice, alongside years of C# and .NET. I build and consume REST APIs, webhooks and OAuth 2.0 authentication, and connect systems, databases and services with n8n workflows.</p>
+        </div>
+      </section>
+
+      <section class="block" id="ia" data-section="sobre">
+        <h2 class="block-title" data-i18n="ai.title">AI in practice</h2>
+        <div class="block-body">
+          <p class="lead" data-i18n="ai.lead">I use generative AI as an engineering tool, not a showcase: to deliver faster, with more context, and with verification.</p>
+          <dl class="rows">
+            <div class="row">
+              <dt data-i18n="ai.1t">Agentic development</dt>
+              <dd data-i18n="ai.1d">Daily work with Claude Code: I plan, delegate to agents, review and verify. The agent writes; accountability for the result stays with me.</dd>
+            </div>
+            <div class="row">
+              <dt data-i18n="ai.2t">Harness engineering</dt>
+              <dd data-i18n="ai.2d">I build the environment agents operate in: skills, hooks, subagents, persistent memory and MCP servers, with quality gates before anything is called "done".</dd>
+            </div>
+            <div class="row">
+              <dt data-i18n="ai.3t">AI integrations and RAG</dt>
+              <dd data-i18n="ai.3d">OpenAI and Anthropic APIs applied to client businesses, with Retrieval-Augmented Generation so answers stay grounded in the company's own data.</dd>
+            </div>
+            <div class="row">
+              <dt data-i18n="ai.4t">n8n automation</dt>
+              <dd data-i18n="ai.4d">Workflows that connect APIs, systems and databases, removing repetitive manual work end to end.</dd>
+            </div>
+            <div class="row">
+              <dt data-i18n="ai.5t">Own product</dt>
+              <dd data-i18n="ai.5d">I'm building Vibron, an Electron desktop IDE designed for working with AI agents, from editor to terminal.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="block" id="trajetoria" data-section="trajetoria">
+        <h2 class="block-title" data-i18n="career.title">Career</h2>
+        <ol class="block-body timeline">
+          <li class="job">
+            <p class="job-when"><span data-i18n="career.1w">Jun 2022 — present</span></p>
+            <div>
+              <h3>Software Engineer <span class="job-org">· RDI Software</span></h3>
+              <p data-i18n="career.1d">New features and resolution of complex production incidents in McDonald's applications.</p>
+              <ul>
+                <li data-i18n="career.1a">Investigate critical incidents by correlating logs across multiple systems.</li>
+                <li data-i18n="career.1b">Debug application code and reproduce failures in controlled environments down to the root cause.</li>
+                <li data-i18n="career.1c">Design and test fixes with no side effects across markets: Germany, Australia, Canada, United States and others.</li>
+                <li data-i18n="career.1e">Collaborate with global teams to validate findings and define next steps.</li>
+                <li data-i18n="career.1f">Support other developers with questions and code logic, in a daily Scrum routine.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="job-when"><span data-i18n="career.2w">Nov 2020 — May 2022</span></p>
+            <div>
+              <h3>Development Intern <span class="job-org">· RDI Software</span></h3>
+              <p data-i18n="career.2d">My way into RDI. A year and seven months learning from the inside the applications I would later support as an engineer.</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="job-when"><span data-i18n="career.3w">Nov 2019 — Apr 2020</span></p>
+            <div>
+              <h3><span data-i18n="career.3t">Back-end Developer</span> <span class="job-org">· IGS Desenvolvimento de Software</span></h3>
+              <p data-i18n="career.3d">First professional experience writing back-end software.</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="job-when"><span data-i18n="career.4w">Nov 2018 — Sep 2019</span></p>
+            <div>
+              <h3><span data-i18n="career.4t">IT Support Technician</span> <span class="job-org">· ZANC Assessoria Nacional de Cobrança</span></h3>
+              <p data-i18n="career.4d">Where it all started: user and infrastructure support, and the habit of diagnosing before touching anything.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="block" id="stack" data-section="trajetoria">
+        <h2 class="block-title">Stack</h2>
+        <dl class="block-body rows rows-tight">
+          <div class="row"><dt>Back-end</dt><dd>Node.js · C# · .NET · .NET Core · ASP.NET MVC · Entity Framework · C · C++ · Python</dd></div>
+          <div class="row"><dt>APIs</dt><dd>REST · Webhooks · OAuth 2.0 · JSON · Middleware · Microservices</dd></div>
+          <div class="row"><dt>Front-end</dt><dd>React · Next.js · Vite · TypeScript · HTML · CSS</dd></div>
+          <div class="row"><dt data-i18n="stack.data">Data</dt><dd data-i18n="stack.data.d">PostgreSQL · Supabase · Cloud object storage</dd></div>
+          <div class="row"><dt data-i18n="stack.infra">Infra and DevOps</dt><dd data-i18n="stack.infra.d">Docker · Docker Compose · CI/CD · Linux · Git · Self-managed VPS servers (Contabo) · AWS, Azure and Google Cloud (working knowledge)</dd></div>
+          <div class="row"><dt data-i18n="stack.ai">AI and automation</dt><dd>Claude Code · MCP · RAG · OpenAI API · Anthropic API · n8n</dd></div>
+          <div class="row"><dt data-i18n="stack.practice">Practice</dt><dd data-i18n="stack.practice.d">Production debugging · Root cause analysis · Scrum</dd></div>
+        </dl>
+      </section>
+
+      <section class="block" id="formacao" data-section="trajetoria">
+        <h2 class="block-title" data-i18n="edu.title">Education</h2>
+        <div class="block-body">
+          <dl class="rows rows-tight">
+            <div class="row">
+              <dt>2025 — 2027</dt>
+              <dd><strong data-i18n="edu.1t">Postgraduate Degree in Full-Stack Software Engineering</strong><br /><span class="dim">Faculdade de Tecnologia Rocketseat</span></dd>
+            </div>
+            <div class="row">
+              <dt>2018 — 2022</dt>
+              <dd><strong data-i18n="edu.2t">Bachelor's Degree in Computer Engineering</strong><br /><span class="dim">Universidade Anhembi Morumbi</span></dd>
+            </div>
+            <div class="row">
+              <dt data-i18n="edu.certs">Certifications</dt>
+              <dd>POO C# · Node.js Fundamentals · Front End · Full-Stack · NLW Expert (React) · The Developers Conference · Global Collaboration Certificate</dd>
+            </div>
+            <div class="row">
+              <dt data-i18n="edu.langs">Languages</dt>
+              <dd data-i18n="edu.langs.d">Portuguese, native · English, full professional · Spanish, basic</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="contact" id="contato" data-section="contato">
+        <h2 class="contact-title split" data-i18n="contact.title">Let's Talk</h2>
+        <p data-i18n="contact.sub">I prefer a good written message to an unexpected call. I reply to every one.</p>
+        <div class="contact-actions">
+          <a class="pill-dark pill-linkedin" href="https://www.linkedin.com/in/gabriel-fuli-valcarce-b8100115b/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span data-i18n="contact.li">Connect on LinkedIn</span></a>
+          <a class="pill-dark" href="https://github.com/Fulixts" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i><span data-i18n="contact.gh">See my GitHub</span></a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Gabriel Fuli Valcarce · São Paulo, Brasil</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
+  </main>
+
+  <script src="main.js?v=19" defer></script>
+</body>
+</html>
