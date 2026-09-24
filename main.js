@@ -4,6 +4,33 @@
 
   const $$ = (sel, scope = document) => Array.from(scope.querySelectorAll(sel));
 
+  const marquee = document.querySelector(".marquee");
+  if (marquee) {
+    const track = marquee.querySelector(".marquee-track");
+    const firstGroup = track.querySelector(".marquee-group");
+
+    const fillMarquee = () => {
+      const groupWidth = firstGroup.getBoundingClientRect().width;
+      if (!groupWidth) return;
+
+      const count = Math.max(2, Math.ceil(marquee.getBoundingClientRect().width / groupWidth) + 1);
+      while (track.children.length < count) track.append(firstGroup.cloneNode(true));
+      while (track.children.length > count) track.lastElementChild.remove();
+      track.style.setProperty("--marquee-offset", `${-100 / count}%`);
+      track.style.setProperty("--marquee-duration", `${groupWidth / 86}s`);
+    };
+
+    fillMarquee();
+    if ("ResizeObserver" in window) {
+      const observer = new ResizeObserver(fillMarquee);
+      observer.observe(marquee);
+      observer.observe(firstGroup);
+    } else {
+      window.addEventListener("resize", fillMarquee);
+    }
+    if (document.fonts) document.fonts.ready.then(fillMarquee);
+  }
+
   /* ---------- Count-up stats ---------- */
 
   const statValues = $$(".stat-value");
@@ -69,8 +96,6 @@
     if (window.innerWidth > 720 && menuIsOpen()) setMenu(false);
   });
 
-  /* ---------- Active nav + scroll reveal + video pause ---------- */
-
   const navLinks = $$("[data-nav]");
   const sections = $$("[data-section]");
 
@@ -122,12 +147,9 @@
     );
     items.forEach((el) => itemObserver.observe(el));
 
-    const video = document.querySelector(".bg-video");
     const hero = document.getElementById("inicio");
     new IntersectionObserver(([entry]) => {
       document.body.classList.toggle("past-hero", !entry.isIntersecting);
-      if (entry.isIntersecting) video.play().catch(() => {});
-      else video.pause();
     }).observe(hero);
   } else {
     $$(".block, .contact").forEach((el) => el.classList.add("in-view"));
@@ -142,8 +164,8 @@
     "nav.career": "Trajetória",
     "nav.contact": "Contato",
     "hero.trust": "Software Engineer na RDI Software",
-    "hero.h1a": "Engenharia",
-    "hero.h1b": "Feita Para Evoluir",
+    "hero.h1a": "Gabriel",
+    "hero.h1b": "Fuli",
     "hero.sub": "Sou Gabriel Fuli, engenheiro de software full-stack. Construo APIs, automações e integrações de IA que sustentam operações reais em produção.",
     "hero.cta": "Conheça minha trajetória",
     "stat.years": "Anos em tecnologia",
@@ -202,8 +224,8 @@
   };
 
   const ui = {
-    en: { burger: ["Open menu", "Close menu"], toggle: "PT", toggleLabel: "Mudar para português", html: "en" },
-    pt: { burger: ["Abrir menu", "Fechar menu"], toggle: "EN", toggleLabel: "Switch to English", html: "pt-BR" },
+    en: { burger: ["Open menu", "Close menu"], html: "en" },
+    pt: { burger: ["Abrir menu", "Fechar menu"], html: "pt-BR" },
   };
 
   let lang = "en";
@@ -249,9 +271,8 @@
       if (el.classList.contains("split")) splitChars(el);
     });
     root.lang = labels().html;
-    $$("[data-lang-toggle]").forEach((btn) => {
-      btn.textContent = labels().toggle;
-      btn.setAttribute("aria-label", labels().toggleLabel);
+    $$("[data-lang]").forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(btn.dataset.lang === next));
     });
     burger.setAttribute("aria-label", labels().burger[menuIsOpen() ? 1 : 0]);
     try {
@@ -259,8 +280,8 @@
     } catch {}
   }
 
-  $$("[data-lang-toggle]").forEach((btn) =>
-    btn.addEventListener("click", () => setLang(lang === "en" ? "pt" : "en"))
+  $$("[data-lang]").forEach((btn) =>
+    btn.addEventListener("click", () => setLang(btn.dataset.lang))
   );
 
   let stored = null;
@@ -414,7 +435,6 @@
 
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (finePointer) {
-    const video = document.querySelector(".bg-video");
     const heroContent = document.querySelector(".hero");
     window.addEventListener(
       "pointermove",
@@ -422,7 +442,6 @@
         if (document.body.classList.contains("past-hero")) return;
         const nx = e.clientX / window.innerWidth - 0.5;
         const ny = e.clientY / window.innerHeight - 0.5;
-        video.style.translate = `${(-nx * 28).toFixed(1)}px ${(-ny * 18).toFixed(1)}px`;
         heroContent.style.translate = `${(nx * 10).toFixed(1)}px ${(ny * 6).toFixed(1)}px`;
       },
       { passive: true }
