@@ -1,0 +1,16 @@
+# Never publish: the LinkedIn export has personal data (phone number)
+Profile.pdf
+*.pdf
+
+# Repo and tooling files that are not part of the site
+.git
+.gitignore
+.assetsignore
+.wrangler
+.impeccable
+.omc
+.claude
+node_modules
+wrangler.jsonc
+*.md
+.codegraph

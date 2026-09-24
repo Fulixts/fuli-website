@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "fuli-website",
+  "compatibility_date": "2026-09-01",
+  // Static site: no Worker script, Cloudflare serves the files directly.
+  "assets": { "directory": "." },
+  // Cloudflare creates the DNS records and TLS certificates for these hostnames.
+  "routes": [
+    { "pattern": "fulidev.com", "custom_domain": true },
+    { "pattern": "www.fulidev.com", "custom_domain": true }
+  ]
+}

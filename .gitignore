@@ -1,3 +1,5 @@
 Profile.pdf
 .impeccable/
 .omc/
+.wrangler/
+node_modules/
