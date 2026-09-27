@@ -109,15 +109,29 @@
   }
 
   if ("IntersectionObserver" in window) {
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => e.isIntersecting && setActive(e.target.dataset.section));
-        // Anchor jumps skip past items without intersecting them; never leave those hidden.
-        items.forEach((el) => el.getBoundingClientRect().top < 0 && el.classList.add("is-shown"));
-      },
-      { rootMargin: "-45% 0px -50% 0px" }
-    );
-    sections.forEach((s) => navObserver.observe(s));
+    // Active section = the last one whose top has passed mid-screen. At the very bottom the last
+    // section wins, since a short final section (contact) may never reach mid-screen on tall viewports.
+    let navQueued = false;
+    function updateActive() {
+      navQueued = false;
+      const doc = document.documentElement;
+      const atBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 2;
+      let current = sections[0];
+      sections.forEach((s) => {
+        if (s.getBoundingClientRect().top <= window.innerHeight / 2) current = s;
+      });
+      if (atBottom) current = sections[sections.length - 1];
+      setActive(current.dataset.section);
+      // Anchor jumps skip past items without intersecting them; never leave those hidden.
+      items.forEach((el) => el.getBoundingClientRect().top < 0 && el.classList.add("is-shown"));
+    }
+    function queueActive() {
+      if (navQueued) return;
+      navQueued = true;
+      requestAnimationFrame(updateActive);
+    }
+    window.addEventListener("scroll", queueActive, { passive: true });
+    window.addEventListener("resize", queueActive);
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -146,6 +160,7 @@
       { rootMargin: "0px 0px -8% 0px" }
     );
     items.forEach((el) => itemObserver.observe(el));
+    updateActive();
 
     const hero = document.getElementById("inicio");
     new IntersectionObserver(([entry]) => {
