@@ -16,7 +16,7 @@ A personal portfolio presenting software engineering experience, technical pract
 
 ## Operating Context
 
-Visitors can read the site in English or Portuguese. The page is a single scrolling document with sections for introduction, background, AI practice, career, stack, education, and contact.
+Visitors can read the site in English or Portuguese. The page is a single scrolling document with sections for introduction, background, web and front-end work, AI practice, career, stack, education, and contact.
 
 ## Capabilities and Constraints
 
