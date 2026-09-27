@@ -248,19 +248,28 @@
     "edu.langs.d": "Português nativo · Inglês profissional pleno · Espanhol básico",
     "contact.title": "Vamos Conversar",
     "contact.sub": "Precisa de um site, uma landing page ou um dashboard, ou quer conversar sobre uma vaga? Me manda uma mensagem. Prefiro uma boa mensagem escrita a uma ligação inesperada, e respondo todas.",
+    "contact.wa": "Falar no WhatsApp",
     "contact.gh": "Ver meu GitHub",
     "contact.li": "Conectar no LinkedIn"
   };
 
   const ui = {
-    en: { burger: ["Open menu", "Close menu"], html: "en" },
-    pt: { burger: ["Abrir menu", "Fechar menu"], html: "pt-BR" },
+    en: { burger: ["Open menu", "Close menu"], html: "en", wa: "Hi Gabriel! I found you through fulidev.com." },
+    pt: { burger: ["Abrir menu", "Fechar menu"], html: "pt-BR", wa: "Olá, Gabriel! Vim pelo fulidev.com." },
   };
 
   let lang = "en";
   function labels() {
     return ui[lang];
   }
+
+  // The number is assembled here instead of written in the markup, to keep it away from simple scrapers.
+  const waNumber = ["55", "11", "94737", "5588"].join("");
+  function setWhatsAppLinks() {
+    const href = `https://wa.me/${waNumber}?text=${encodeURIComponent(labels().wa)}`;
+    $$("[data-wa]").forEach((a) => (a.href = href));
+  }
+  setWhatsAppLinks();
 
   const translatable = $$("[data-i18n]");
   const en = Object.fromEntries(translatable.map((el) => [el.dataset.i18n, el.textContent.trim().replace(/\s+/g, " ")]));
@@ -300,6 +309,7 @@
       if (el.classList.contains("split")) splitChars(el);
     });
     root.lang = labels().html;
+    setWhatsAppLinks();
     $$("[data-lang]").forEach((btn) => {
       btn.setAttribute("aria-pressed", String(btn.dataset.lang === next));
     });

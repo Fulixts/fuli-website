@@ -150,6 +150,8 @@ a { color: inherit; text-underline-offset: 0.2em; }
 .pill-linkedin:hover { background: #0b74dc; color: #fff; }
 .lang.pill-linkedin { background: var(--linkedin); color: #fff; }
 .lang.pill-linkedin:hover { background: #0b74dc; }
+.pill-whatsapp { background: #25d366; color: #04210f; }
+.pill-whatsapp:hover { background: #3ae077; color: #04210f; }
 
 .lang {
   flex: none; width: var(--pill-h); height: var(--pill-h);
@@ -558,7 +560,8 @@ strong { color: #fff; font-weight: 500; }
   .menu-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
   .menu-actions .pill-dark { width: 100%; font-size: 15px; border: 1px solid rgba(255, 255, 255, 0.18); color: #fff; }
   .menu-actions > .pill-linkedin, .menu-actions > .pill-linkedin:hover { background: #0a66c2; border-color: #0a66c2; }
-  .menu-actions > .pill-dark:not(.pill-linkedin), .menu-actions > .pill-dark:not(.pill-linkedin):hover { background: #000; border-color: rgba(255, 255, 255, 0.24); }
+  .menu-actions > .pill-dark:not(.pill-linkedin):not(.pill-whatsapp), .menu-actions > .pill-dark:not(.pill-linkedin):not(.pill-whatsapp):hover { background: #000; border-color: rgba(255, 255, 255, 0.24); }
+  .menu-actions > .pill-whatsapp, .menu-actions > .pill-whatsapp:hover { grid-column: 1 / -1; background: #25d366; border-color: #25d366; color: #04210f; }
   .menu-actions .language-switch { grid-column: 1 / -1; justify-content: center; }
   .menu-actions .lang { border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.08); color: var(--nav-text); }
   .menu-actions .lang[aria-pressed="true"], .menu-actions .lang[aria-pressed="true"]:hover { border-color: rgba(255, 255, 255, 0.42); background: rgba(255, 255, 255, 0.2); color: #fff; }
